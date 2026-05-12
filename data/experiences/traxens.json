@@ -1,0 +1,27 @@
+{
+  "order": 40,
+  "current": false,
+  "logo": "https://www.google.com/s2/favicons?domain=traxens.com&sz=128",
+  "logoAlt": {
+    "en": "Traxens logo",
+    "fr": "Logo Traxens"
+  },
+  "company": {
+    "name": "Traxens",
+    "url": "https://www.linkedin.com/company/traxens"
+  },
+  "meta": {
+    "en": "Jun 2020 — Apr 2021 · Marseille, France",
+    "fr": "juin 2020 — avr. 2021 · Marseille, France"
+  },
+  "role": {
+    "en": "QA Automation Engineer",
+    "fr": "Ingénieur d’automatisation QA"
+  },
+  "bullets": [
+    {
+      "en": "Automated functional BDD tests (Cucumber) integrated in Jenkins pipelines.",
+      "fr": "Automatisation des tests fonctionnels BDD (Cucumber) sous Jenkins."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "order": 10,
+  "current": true,
+  "logo": "https://www.google.com/s2/favicons?domain=marseille.fr&sz=128",
+  "logoAlt": {
+    "en": "Ville de Marseille logo",
+    "fr": "Logo Ville de Marseille"
+  },
+  "company": {
+    "name": "Ville de Marseille",
+    "url": "https://www.linkedin.com/company/ville-de-marseille"
+  },
+  "meta": {
+    "en": "Jan 2025 — Present · Marseille, France",
+    "fr": "janv. 2025 — aujourd’hui · Marseille, France"
+  },
+  "role": {
+    "en": "Architect & Lead Tech — Java J2EE Angular",
+    "fr": "Architecte, Lead Tech Dev Senior — Pôle Java J2EE Angular"
+  },
+  "bullets": [
+    {
+      "en": "Application referent: analysis of existing systems, backlog ownership, design and delivery of new features.",
+      "fr": "Référent applicatif : analyse des applications existantes, reprise du backlog, conception et développement de nouvelles fonctionnalités."
+    },
+    {
+      "en": "Technical leadership: mentoring developers and facilitating technical rituals.",
+      "fr": "Encadrement technique : supervision et accompagnement des développeurs, animation des rituels techniques."
+    },
+    {
+      "en": "MCO: incident handling and support requests; evolutions: estimation, development, testing, deployment, technical documentation.",
+      "fr": "MCO : gestion des incidents et demandes de support ; évolutifs : estimation, développement, tests, déploiement et documentation technique."
+    },
+    {
+      "en": "Steering with project management and end clients; transversal work on quality, security, obsolescence, CI/CD, and technology watch.",
+      "fr": "Pilotage technique avec le chef de projet et le client ; chantiers transverses (qualité, sécurité, obsolescence, CI/CD, veille technologique)."
+    },
+    {
+      "en": "Strategic SI initiatives: GitLab rollout and client support, Keycloak for identity, architecture refactors, data-related contributions.",
+      "fr": "Transformation du SI : déploiement et accompagnement GitLab, intégration Keycloak, refonte d’architectures applicatives, contribution aux chantiers Data."
+    },
+    {
+      "en": "<strong>Stack:</strong> Java / J2EE, Angular, CI/CD, GitLab, Keycloak, Unix (VM), Ansible scripting, architecture, security, software quality.",
+      "fr": "<strong>Stack :</strong> Java / J2EE, Angular, CI/CD, GitLab, Keycloak, Unix (VM), scripts Ansible, architecture, sécurité, qualité logicielle.",
+      "html": true
+    }
+  ]
+}

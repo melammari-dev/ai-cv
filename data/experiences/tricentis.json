@@ -1,0 +1,27 @@
+{
+  "order": 30,
+  "current": false,
+  "logo": "https://www.google.com/s2/favicons?domain=tricentis.com&sz=128",
+  "logoAlt": {
+    "en": "Tricentis logo",
+    "fr": "Logo Tricentis"
+  },
+  "company": {
+    "name": "Tricentis",
+    "url": "https://www.linkedin.com/company/tricentis-technology-%26-consulting-gmbh"
+  },
+  "meta": {
+    "en": "Apr 2021 — Jun 2022 · Gémenos, France",
+    "fr": "avr. 2021 — juin 2022 · Gémenos, France"
+  },
+  "role": {
+    "en": "Software Design & Development Engineer",
+    "fr": "Ingénieur d’étude et développement"
+  },
+  "bullets": [
+    {
+      "en": "Built new features and evolutions for NeoLoad / NeoLoad Web—enterprise performance testing products.",
+      "fr": "Développement des nouvelles fonctionnalités et évolutions du produit NeoLoad / NeoLoad Web (tests de performance Tricentis)."
+    }
+  ]
+}

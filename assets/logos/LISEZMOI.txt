@@ -1,0 +1,8 @@
+Placez ici les logos clients (PNG, SVG ou WebP recommandés).
+
+Nommez les fichiers de façon stable (ex. monext.png) et référencez-les dans
+data/experiences/<votre-fichier>.json, champ "logo" :
+
+  "logo": "assets/logos/monext.png"
+
+Taille conseillée : carré 112×112 px à 256×256 px, fond transparent si possible.

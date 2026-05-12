@@ -1,0 +1,27 @@
+{
+  "order": 50,
+  "current": false,
+  "logo": "https://www.google.com/s2/favicons?domain=monext.com&sz=128",
+  "logoAlt": {
+    "en": "MONEXT logo",
+    "fr": "Logo MONEXT"
+  },
+  "company": {
+    "name": "MONEXT",
+    "url": "https://www.linkedin.com/company/monext"
+  },
+  "meta": {
+    "en": "Mar 2010 — Mar 2020",
+    "fr": "mars 2010 — mars 2020"
+  },
+  "role": {
+    "en": "Software Development Engineer",
+    "fr": "Ingénieur développement logiciels"
+  },
+  "bullets": [
+    {
+      "en": "Ten years delivering payment-industry solutions for e-commerce, retail, banking, and fintech—complex integrations and reliable platforms.",
+      "fr": "Dix années sur des solutions paiement pour e-commerce, retail, banque et fintech—intégrations complexes et plateformes fiables."
+    }
+  ]
+}

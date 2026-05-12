@@ -1,0 +1,27 @@
+{
+  "order": 20,
+  "current": false,
+  "logo": "https://www.google.com/s2/favicons?domain=adsn.org&sz=128",
+  "logoAlt": {
+    "en": "Groupe ADSN logo",
+    "fr": "Logo Groupe ADSN"
+  },
+  "company": {
+    "name": "Groupe ADSN",
+    "url": "https://www.linkedin.com/company/groupeadsn"
+  },
+  "meta": {
+    "en": "Jul 2022 — Mar 2025 · Venelles, France",
+    "fr": "juil. 2022 — mars 2025 · Venelles, France"
+  },
+  "role": {
+    "en": "Technical Architect",
+    "fr": "Architecte technique"
+  },
+  "bullets": [
+    {
+      "en": "Design, development, and rollout of the server for validation and electronic signature of notarial acts.",
+      "fr": "Conception, développement et mise en place du serveur de validation et de signature des actes produits par les notaires."
+    }
+  ]
+}
