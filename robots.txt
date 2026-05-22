@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://melammari-dev.github.io/ai-cv/sitemap.xml

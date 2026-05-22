@@ -398,6 +398,10 @@ main {
   margin-left: 0.75rem;
 }
 
+.hero-actions .btn-secondary {
+  margin-left: 0;
+}
+
 .btn-secondary:hover {
   border-color: var(--accent);
   color: var(--accent);
@@ -769,4 +773,60 @@ main {
 
 .site-footer a:hover {
   color: var(--accent);
+}
+
+/* Accessibility — reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Responsive — landscape mobile: limit hero height */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
+
+/* Print — useful for the CV page */
+@media print {
+  .site-header,
+  .hero,
+  .hero-actions,
+  .lang-switcher,
+  .nav-toggle,
+  .skip-link,
+  .site-footer { display: none !important; }
+
+  body {
+    background: #fff;
+    color: #111;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .section { padding: 0.5rem 0; }
+
+  .container { max-width: 100%; padding: 0 1rem; }
+
+  .cv-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-item h2, .cv-item h3, .section-title { color: #111; }
+  .cv-meta, .timeline-date { color: #444; }
+  .cv-item .company, .cv-item ul, .card p, .section-lead { color: #444; }
+
+  a { color: #111; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #666; }
 }

@@ -263,9 +263,23 @@
     if (page) {
       var titleKey = "meta.title." + page;
       var descKey = "meta.desc." + page;
-      if (pack[titleKey]) document.title = pack[titleKey];
-      var meta = document.querySelector('meta[name="description"]');
-      if (meta && pack[descKey]) meta.setAttribute("content", pack[descKey]);
+      if (pack[titleKey]) {
+        document.title = pack[titleKey];
+        var ogTitle = document.querySelector('meta[property="og:title"]');
+        var twTitle = document.querySelector('meta[name="twitter:title"]');
+        if (ogTitle) ogTitle.setAttribute("content", pack[titleKey]);
+        if (twTitle) twTitle.setAttribute("content", pack[titleKey]);
+      }
+      var descMeta = document.querySelector('meta[name="description"]');
+      if (pack[descKey]) {
+        if (descMeta) descMeta.setAttribute("content", pack[descKey]);
+        var ogDesc = document.querySelector('meta[property="og:description"]');
+        var twDesc = document.querySelector('meta[name="twitter:description"]');
+        if (ogDesc) ogDesc.setAttribute("content", pack[descKey]);
+        if (twDesc) twDesc.setAttribute("content", pack[descKey]);
+      }
+      var ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogLocale) ogLocale.setAttribute("content", lang === "fr" ? "fr_FR" : "en_GB");
     }
 
     document.querySelectorAll(".lang-btn").forEach(function (btn) {
