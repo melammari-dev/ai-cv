@@ -58,6 +58,10 @@
               LinkedIn
             </a>
           </nav>
+          <a class="btn-dl-pdf" href="cv-pdf.html" data-i18n-attr="title:nav.downloadCVTitle" title="Télécharger le CV en PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span class="btn-dl-pdf-label" data-i18n="nav.downloadCV">CV PDF</span>
+          </a>
           <div class="lang-switcher" role="group" aria-label="Language">
             <button type="button" class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true" title="English">🇬🇧</button>
             <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false" title="Français">🇫🇷</button>
@@ -78,8 +82,17 @@
           <p class="section-lead" data-i18n-html="cv.leadHtml">
             Roles summarised from my <a href="https://www.linkedin.com/in/mouhssine-yacine-el-ammari-a104b013a/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>—15+ years across payments, performance tooling, logistics QA, and public-sector transformation.
           </p>
+          <div id="cv-timeline-root" aria-live="polite"></div>
+        </div>
+      </section>
 
-          <div id="cv-list-root" class="cv-list" aria-live="polite"></div>
+      <section class="section" aria-labelledby="edu-title" style="padding-top:0">
+        <div class="container">
+          <h2 id="edu-title" class="section-title" data-i18n="cv.formation">Education</h2>
+          <p class="section-lead" data-i18n="cv.formationLead">
+            Master's degrees in computer engineering and software engineering — Université Paul Cézanne &amp; Université de Provence, Marseille.
+          </p>
+          <div id="edu-root" class="edu-grid" aria-live="polite"></div>
         </div>
       </section>
     </main>

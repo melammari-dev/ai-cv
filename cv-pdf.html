@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Mouhssine Yacine EL-AMMARI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --hdr:    #0d1526;
+      --side:   #111d30;
+      --accent: #2dd4bf;
+      --ak:     #0f766e;
+      --white:  #ffffff;
+      --txt:    #1e293b;
+      --muted:  #64748b;
+      --font:   "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: #dde3ec;
+      font-size: 9pt;
+      line-height: 1.5;
+      color: var(--txt);
+    }
+
+    /* ═══ Toolbar ══════════════════════════════════════════════ */
+    .toolbar {
+      position: sticky; top: 0; z-index: 200;
+      background: #0a0e17;
+      border-bottom: 1px solid rgba(45,212,191,0.18);
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .tb-left { display: flex; align-items: center; gap: 0.65rem; }
+
+    .tb-back {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      color: #94a3b8; font-size: 0.8rem; font-weight: 500;
+      text-decoration: none; padding: 0.35rem 0.65rem;
+      border-radius: 7px; transition: background .15s, color .15s;
+    }
+    .tb-back:hover { background: rgba(255,255,255,0.07); color: #e8eef8; }
+
+    .tb-hint {
+      font-size: 0.72rem; color: rgba(148,163,184,0.55);
+      display: none;
+    }
+    @media (min-width: 700px) { .tb-hint { display: block; } }
+
+    .tb-right { display: flex; align-items: center; gap: 0.65rem; }
+
+    .tb-lang {
+      display: inline-flex; background: rgba(255,255,255,0.07);
+      border-radius: 999px; overflow: hidden;
+    }
+    .tb-lang button {
+      border: none; background: transparent;
+      color: #64748b; font-size: 0.8rem; font-weight: 600;
+      font-family: var(--font); padding: 0.3rem 0.7rem; cursor: pointer;
+      letter-spacing: 0.02em;
+    }
+    .tb-lang button.active { background: rgba(45,212,191,0.15); color: #2dd4bf; }
+
+    .tb-print {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+      color: #042f2e; font-family: var(--font);
+      font-size: 0.8rem; font-weight: 700;
+      border: none; border-radius: 999px;
+      padding: 0.5rem 1.1rem; cursor: pointer;
+      box-shadow: 0 3px 12px rgba(45,212,191,0.3);
+      transition: box-shadow .2s, transform .15s;
+    }
+    .tb-print:hover { box-shadow: 0 5px 20px rgba(45,212,191,0.45); transform: translateY(-1px); }
+    .tb-print svg { width: 14px; height: 14px; }
+
+    /* ═══ Page wrapper ══════════════════════════════════════════ */
+    .page-wrap {
+      padding: 1.5rem;
+      display: flex; justify-content: center;
+      min-height: calc(100vh - 42px);
+    }
+
+    /* ═══ CV document ═══════════════════════════════════════════ */
+    .cv {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      box-shadow: 0 30px 90px rgba(0,0,0,.4), 0 6px 24px rgba(0,0,0,.18);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+
+    /* ═══ Header band ═══════════════════════════════════════════ */
+    .cv-header {
+      background: var(--hdr);
+      padding: 1.6rem 2rem 1.5rem;
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 1rem;
+      position: relative; overflow: hidden;
+    }
+    .cv-header::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 140% at 90% 50%, rgba(45,212,191,.14), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cv-name {
+      font-size: 2rem; font-weight: 800;
+      color: #fff; letter-spacing: -.04em; line-height: 1;
+      position: relative;
+    }
+    .cv-name-accent { color: var(--accent); }
+
+    .cv-role {
+      font-size: 0.68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .16em;
+      color: rgba(232,238,248,.55); margin-top: .4rem;
+      position: relative;
+    }
+
+    .cv-header-meta {
+      position: relative;
+      display: flex; flex-direction: column;
+      gap: .3rem; align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .hdr-tag {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-size: 0.68rem; color: rgba(232,238,248,.5);
+      white-space: nowrap;
+    }
+    .hdr-tag svg { width: 11px; height: 11px; opacity: .75; }
+    a.hdr-tag { text-decoration: none; transition: color .15s; }
+    a.hdr-tag:hover { color: var(--accent); }
+    a.hdr-tag:hover svg { opacity: 1; }
+
+    /* accent bar */
+    .cv-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, #5eead4 50%, transparent 100%);
+    }
+
+    /* ═══ Body ══════════════════════════════════════════════════ */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 196px 1fr;
+      flex: 1;
+    }
+
+    /* ═══ Sidebar ═══════════════════════════════════════════════ */
+    .cv-side {
+      background: var(--side);
+      padding: 1.4rem 1.2rem;
+      display: flex; flex-direction: column; gap: 1.4rem;
+    }
+
+    .sb-sec h4 {
+      font-size: 0.58rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .2em;
+      color: var(--accent);
+      padding-bottom: .35rem;
+      border-bottom: 1px solid rgba(45,212,191,.2);
+      margin-bottom: .75rem;
+    }
+
+    /* contact */
+    .ct-row {
+      display: flex; align-items: flex-start; gap: .45rem;
+      margin-bottom: .5rem;
+    }
+    .ct-row svg { flex-shrink: 0; width: 11px; height: 11px; color: var(--accent); margin-top: 1px; }
+    .ct-row span, .ct-row a {
+      font-size: 0.7rem; color: rgba(232,238,248,.6);
+      line-height: 1.4; text-decoration: none; word-break: break-word;
+    }
+    .ct-row a:hover { color: var(--accent); }
+
+    /* skills */
+    .sk-row { margin-bottom: .6rem; }
+    .sk-label {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: .2rem;
+    }
+    .sk-name { font-size: 0.7rem; color: rgba(232,238,248,.78); font-weight: 500; }
+    .sk-pct  { font-size: 0.58rem; color: rgba(232,238,248,.35); }
+    .sk-track {
+      height: 2.5px; background: rgba(255,255,255,.08);
+      border-radius: 2px; overflow: hidden;
+    }
+    .sk-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #5eead4);
+      border-radius: 2px;
+    }
+
+    /* languages */
+    .lg-row {
+      display: flex; align-items: center;
+      justify-content: space-between; margin-bottom: .5rem;
+    }
+    .lg-name  { font-size: 0.7rem; color: rgba(232,238,248,.78); font-weight: 500; }
+    .lg-dots  { display: flex; gap: 3px; }
+    .lg-dot   { width: 6px; height: 6px; border-radius: 50%; background: rgba(45,212,191,.18); }
+    .lg-dot.on { background: var(--accent); }
+
+    /* ═══ Main content ══════════════════════════════════════════ */
+    .cv-main {
+      padding: 1.4rem 1.65rem;
+      background: var(--white);
+    }
+
+    /* section title */
+    .sec-hd {
+      display: flex; align-items: center; gap: .6rem;
+      margin-bottom: .95rem; margin-top: .2rem;
+    }
+    .sec-hd h3 {
+      font-size: 0.6rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .2em;
+      color: var(--ak); white-space: nowrap;
+    }
+    .sec-hd::after {
+      content: ""; flex: 1; height: 1px;
+      background: linear-gradient(90deg, rgba(15,118,110,.25), transparent);
+    }
+
+    /* profile */
+    .profile {
+      font-size: 0.79rem; color: var(--muted);
+      line-height: 1.65; margin-bottom: 1.2rem;
+      border-left: 2.5px solid var(--accent);
+      padding-left: .72rem;
+    }
+
+    /* experience */
+    .exp-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .exp-card {
+      display: grid; grid-template-columns: 30px 1fr;
+      gap: 0 .7rem; position: relative;
+    }
+    .exp-card:not(:last-child)::after {
+      content: ""; position: absolute;
+      left: 14px; top: 30px; bottom: -1rem;
+      width: 1px; background: rgba(15,118,110,.12);
+    }
+
+    .exp-logo-box {
+      width: 30px; height: 30px;
+      border-radius: 5px; background: #f8fafc;
+      border: 1px solid #e2e8f0; overflow: hidden; flex-shrink: 0;
+    }
+    .exp-logo { width: 100%; height: 100%; object-fit: contain; padding: 2px; display: block; }
+    .exp-logo-fallback {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--ak);
+      background: #f0fdfb;
+    }
+
+    .exp-dates {
+      font-size: 0.6rem; font-weight: 700; color: var(--ak);
+      letter-spacing: .04em; text-transform: uppercase; margin-bottom: .08rem;
+    }
+    .exp-title {
+      font-size: 0.84rem; font-weight: 700; color: var(--txt);
+      letter-spacing: -.01em; margin-bottom: .06rem;
+    }
+    .exp-co {
+      font-size: 0.7rem; font-weight: 500; color: var(--muted);
+      margin-bottom: .3rem;
+    }
+    .exp-ul { list-style: none; }
+    .exp-ul li {
+      font-size: 0.73rem; color: var(--muted);
+      line-height: 1.55; padding-left: .75rem; position: relative;
+    }
+    .exp-ul li::before {
+      content: "▸"; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.58rem; top: 3px;
+    }
+    .exp-ul li + li { margin-top: .12rem; }
+
+    /* ═══ Formation (PDF) ══════════════════════════════════════ */
+    #formation-list { display: flex; flex-direction: column; gap: .55rem; }
+    .edu-row {
+      display: flex; gap: .75rem; align-items: flex-start;
+      padding: .55rem .65rem;
+      background: #f8fafc; border-radius: 5px;
+      border-left: 2.5px solid var(--accent);
+    }
+    .edu-per {
+      font-size: .6rem; font-weight: 700; color: var(--ak);
+      text-transform: uppercase; letter-spacing: .06em;
+      white-space: nowrap; min-width: 5.5rem; padding-top: .05rem;
+    }
+    .edu-deg { font-size: .78rem; font-weight: 600; color: var(--txt); margin-bottom: .1rem; line-height: 1.35; }
+    .edu-sch { font-size: .7rem; color: var(--muted); }
+
+    /* ═══ Print ════════════════════════════════════════════════ */
+    @media print {
+      @page { size: A4; margin: 0; }
+      body { background: none; }
+      .toolbar { display: none !important; }
+      .page-wrap { padding: 0; min-height: 0; }
+      .cv { width: 100%; min-height: 100vh; box-shadow: none; border-radius: 0; }
+    }
+
+    /* ═══ Responsive (screen) ═══════════════════════════════════ */
+    @media (max-width: 820px) {
+      .page-wrap { padding: .75rem; }
+      .cv { width: 100%; min-width: 0; }
+    }
+    @media (max-width: 580px) {
+      .cv-header { flex-direction: column; align-items: flex-start; }
+      .cv-header-meta { align-items: flex-start; }
+      .cv-name { font-size: 1.5rem; }
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-side { order: 2; }
+      .cv-main { order: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Toolbar ──────────────────────────────────────────── -->
+<div class="toolbar">
+  <div class="tb-left">
+    <a href="cv.html" class="tb-back" data-i18n="pdf.back">← Retour</a>
+    <span class="tb-hint" data-i18n="pdf.hint">Fichier → Imprimer → Enregistrer en PDF · Marges : Aucune</span>
+  </div>
+  <div class="tb-right">
+    <div class="tb-lang">
+      <button id="btn-fr" onclick="setLang('fr')" class="active">🇫🇷 FR</button>
+      <button id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+    <button class="tb-print" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <span data-i18n="pdf.download">Télécharger PDF</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── Page ─────────────────────────────────────────────── -->
+<div class="page-wrap">
+<div class="cv">
+
+  <!-- Header -->
+  <header class="cv-header">
+    <div>
+      <div class="cv-name">Mouhssine Yacine <span class="cv-name-accent">EL-AMMARI</span></div>
+      <div class="cv-role" data-i18n="pdf.role">Software Engineer · Tech Lead · Architecte technique</div>
+    </div>
+    <div class="cv-header-meta">
+      <div class="hdr-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Marignane, France
+      </div>
+      <div class="hdr-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <span data-i18n="pdf.years">15+ ans d'expérience</span>
+      </div>
+      <a class="hdr-tag" href="https://www.linkedin.com/in/mouhssine-yacine-el-ammari-a104b013a/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        in/mouhssine-yacine-el-ammari-a104b013a
+      </a>
+    </div>
+  </header>
+
+  <div class="cv-bar"></div>
+
+  <!-- Body -->
+  <div class="cv-body">
+
+    <!-- Sidebar -->
+    <aside class="cv-side">
+
+      <div class="sb-sec">
+        <h4 data-i18n="pdf.contact">Contact</h4>
+        <div class="ct-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Marignane, PACA, France</span>
+        </div>
+        <div class="ct-row">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="opacity:.75" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <a href="https://www.linkedin.com/in/mouhssine-yacine-el-ammari-a104b013a/" target="_blank" rel="noopener noreferrer">mouhssine-yacine-el-ammari</a>
+        </div>
+        <div class="ct-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <a href="https://github.com/melammari-dev" target="_blank" rel="noopener noreferrer">melammari-dev</a>
+        </div>
+      </div>
+
+      <div class="sb-sec" id="skills-sec">
+        <h4 data-i18n="pdf.skills">Compétences</h4>
+        <!-- filled by JS -->
+      </div>
+
+      <div class="sb-sec">
+        <h4 data-i18n="pdf.languages">Langues</h4>
+        <div class="lg-row">
+          <span class="lg-name" data-i18n="pdf.langFr">Français</span>
+          <div class="lg-dots">
+            <div class="lg-dot on"></div><div class="lg-dot on"></div>
+            <div class="lg-dot on"></div><div class="lg-dot on"></div>
+            <div class="lg-dot on"></div>
+          </div>
+        </div>
+        <div class="lg-row">
+          <span class="lg-name" data-i18n="pdf.langEn">Anglais</span>
+          <div class="lg-dots">
+            <div class="lg-dot on"></div><div class="lg-dot on"></div>
+            <div class="lg-dot on"></div><div class="lg-dot on"></div>
+            <div class="lg-dot"></div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="cv-main">
+
+      <div class="sec-hd"><h3 data-i18n="pdf.profileTitle">Profil</h3></div>
+      <p class="profile" id="profile-p" data-i18n="pdf.profile">
+        Ingénieur logiciel avec plus de 15 ans d'expérience en Java, Spring et Angular.
+        Conception de systèmes robustes, pilotage technique, CI/CD, sécurité et performance.
+        À l'aise aussi bien dans la réalisation terrain que dans l'architecture et l'accompagnement d'équipe.
+      </p>
+
+      <div class="sec-hd"><h3 data-i18n="pdf.expTitle">Expérience professionnelle</h3></div>
+      <div class="exp-list" id="exp-list">
+        <p style="font-size:.75rem;color:#94a3b8" data-i18n="pdf.loading">Chargement…</p>
+      </div>
+
+      <div class="sec-hd" style="margin-top:1rem"><h3 data-i18n="pdf.formation">Formation</h3></div>
+      <div id="formation-list"></div>
+
+    </main>
+  </div>
+</div>
+</div>
+
+<script>
+(function () {
+  var LANG_KEY = "mouhssine_site_lang";
+
+  var SKILLS = {
+    fr: [
+      ["Java / Spring Boot",     95],
+      ["Angular / TypeScript",   80],
+      ["Architecture logicielle",90],
+      ["CI/CD · GitLab",         85],
+      ["Keycloak · OAuth2",      78],
+      ["DevOps · Ansible",       72],
+      ["Tests de performance",   80],
+      ["J2EE / Jakarta EE",      90]
+    ],
+    en: [
+      ["Java / Spring Boot",     95],
+      ["Angular / TypeScript",   80],
+      ["Software Architecture",  90],
+      ["CI/CD · GitLab",         85],
+      ["Keycloak · OAuth2",      78],
+      ["DevOps · Ansible",       72],
+      ["Performance Testing",    80],
+      ["J2EE / Jakarta EE",      90]
+    ]
+  };
+
+  var STR = {
+    fr: {
+      "pdf.back":         "← Retour au site",
+      "pdf.hint":         "Fichier → Imprimer → Enregistrer en PDF · Marges : Aucune",
+      "pdf.download":     "Télécharger PDF",
+      "pdf.role":         "Software Engineer · Tech Lead · Architecte technique",
+      "pdf.years":        "15+ ans d'expérience",
+      "pdf.contact":      "Contact",
+      "pdf.skills":       "Compétences",
+      "pdf.languages":    "Langues",
+      "pdf.langFr":       "Français",
+      "pdf.langEn":       "Anglais",
+      "pdf.profileTitle": "Profil",
+      "pdf.profile":      "Ingénieur logiciel avec plus de 15 ans d'expérience en Java, Spring et Angular. Conception de systèmes robustes, pilotage technique, CI/CD, sécurité et performance. À l'aise aussi bien dans la réalisation terrain que dans l'architecture et l'accompagnement d'équipe.",
+      "pdf.expTitle":     "Expérience professionnelle",
+      "pdf.formation":    "Formation",
+      "pdf.loading":      "Chargement…"
+    },
+    en: {
+      "pdf.back":         "← Back to site",
+      "pdf.hint":         "File → Print → Save as PDF · Margins: None",
+      "pdf.download":     "Download PDF",
+      "pdf.role":         "Software Engineer · Tech Lead · Technical Architect",
+      "pdf.years":        "15+ years of experience",
+      "pdf.contact":      "Contact",
+      "pdf.skills":       "Skills",
+      "pdf.languages":    "Languages",
+      "pdf.langFr":       "French",
+      "pdf.langEn":       "English",
+      "pdf.profileTitle": "Profile",
+      "pdf.profile":      "Software engineer with 15+ years of experience in Java, Spring and Angular. I design and build robust systems — from technical leadership and MCO to CI/CD, security, and performance. Equally effective in hands-on development, architecture, and team enablement.",
+      "pdf.expTitle":     "Professional Experience",
+      "pdf.formation":    "Education",
+      "pdf.loading":      "Loading…"
+    }
+  };
+
+  var EDU_PDF = [
+    {
+      period: "2007 — 2008",
+      degree: {
+        fr: "Master II (DESS) · Génie informatique & génie logiciel",
+        en: "Master II (DESS) · Computer Engineering & Software Engineering"
+      },
+      school: "Université Paul Cézanne",
+      location: "Marseille"
+    },
+    {
+      period: "2006 — 2007",
+      degree: {
+        fr: "Master I · Informatique — SIS (Sécurité des systèmes d'information)",
+        en: "Master I · Computer Science — Information Systems Security"
+      },
+      school: "Université Paul Cézanne",
+      location: "Marseille"
+    },
+    {
+      period: "2004 — 2006",
+      degree: { fr: "Licence Informatique", en: "Bachelor's Degree in Computer Science" },
+      school: "CMI — Centre Mathématiques et Informatique",
+      location: "Château Gombert, Marseille"
+    },
+    {
+      period: "2003 — 2004",
+      degree: { fr: "DEUG MIAS · Mathématiques & Informatique", en: "DEUG MIAS · Mathematics & Computer Science" },
+      school: "Université de Provence",
+      location: "Marseille"
+    }
+  ];
+
+  var lang = "fr";
+
+  function t(k) { return (STR[lang] || STR.fr)[k] || k; }
+
+  function applyI18n() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var v = t(el.getAttribute("data-i18n"));
+      if (v) el.textContent = v;
+    });
+    var btnFr = document.getElementById("btn-fr");
+    var btnEn = document.getElementById("btn-en");
+    if (btnFr) btnFr.classList.toggle("active", lang === "fr");
+    if (btnEn) btnEn.classList.toggle("active", lang === "en");
+    renderSkills();
+    renderFormation();
+    if (window._exps) renderExps(window._exps);
+  }
+
+  function renderFormation() {
+    var root = document.getElementById("formation-list");
+    if (!root) return;
+    root.innerHTML = EDU_PDF.map(function (e) {
+      var degree = (EDU_PDF[0].degree[lang] !== undefined) ? e.degree[lang] || e.degree.fr : e.degree.fr;
+      return '<div class="edu-row">'
+        + '<div class="edu-per">' + esc(e.period) + '</div>'
+        + '<div class="edu-txt">'
+          + '<div class="edu-deg">' + esc(degree) + '</div>'
+          + '<div class="edu-sch">' + esc(e.school) + ' · ' + esc(e.location) + '</div>'
+        + '</div>'
+        + '</div>';
+    }).join("");
+  }
+
+  function renderSkills() {
+    var sec = document.getElementById("skills-sec");
+    if (!sec) return;
+    var h4 = sec.querySelector("h4").outerHTML;
+    sec.innerHTML = h4 + (SKILLS[lang] || SKILLS.fr).map(function (s) {
+      return '<div class="sk-row">'
+        + '<div class="sk-label"><span class="sk-name">' + s[0] + '</span>'
+        + '<span class="sk-pct">' + s[1] + '%</span></div>'
+        + '<div class="sk-track"><div class="sk-fill" style="width:' + s[1] + '%"></div></div>'
+        + '</div>';
+    }).join("");
+  }
+
+  window.setLang = function (l) {
+    lang = l;
+    try { localStorage.setItem(LANG_KEY, l); } catch (e) {}
+    applyI18n();
+  };
+
+  function pick(obj, L) {
+    if (!obj) return "";
+    if (typeof obj === "string") return obj;
+    return obj[L] || obj.en || "";
+  }
+
+  function esc(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function renderExps(items) {
+    var root = document.getElementById("exp-list");
+    if (!root) return;
+    root.innerHTML = items.map(function (exp) {
+      var logo    = exp.logo || "";
+      var meta    = pick(exp.meta, lang);
+      var role    = pick(exp.role, lang);
+      var company = (exp.company || {}).name || "";
+      var initial = company.charAt(0).toUpperCase();
+      var bullets = (exp.bullets || []).map(function (b) {
+        return "<li>" + esc(pick(b, lang)) + "</li>";
+      }).join("");
+
+      var logoHtml = logo
+        ? '<img class="exp-logo" src="' + esc(logo) + '" alt="' + esc(company)
+          + '" width="30" height="30" referrerpolicy="no-referrer"'
+          + ' onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+          + '<div class="exp-logo-fallback" style="display:none">' + esc(initial) + '</div>'
+        : '<div class="exp-logo-fallback">' + esc(initial) + '</div>';
+
+      return '<div class="exp-card">'
+        + '<div class="exp-logo-box">' + logoHtml + '</div>'
+        + '<div>'
+          + '<div class="exp-dates">' + esc(meta) + '</div>'
+          + '<div class="exp-title">' + esc(role) + '</div>'
+          + '<div class="exp-co">' + esc(company) + '</div>'
+          + '<ul class="exp-ul">' + bullets + '</ul>'
+        + '</div>'
+        + '</div>';
+    }).join("");
+  }
+
+  function loadExps() {
+    fetch("data/experiences/manifest.json", { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (m) {
+        return Promise.all((m.experienceFiles || []).map(function (p) {
+          return fetch(p, { cache: "no-cache" }).then(function (r) { return r.json(); });
+        }));
+      })
+      .then(function (items) {
+        window._exps = items.slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+        renderExps(window._exps);
+        renderFormation();
+      })
+      .catch(function () {
+        var root = document.getElementById("exp-list");
+        if (root) root.innerHTML = '<p style="font-size:.75rem;color:#ef4444">Erreur de chargement. Utilisez un serveur web local (pas file://).</p>';
+      });
+  }
+
+  function updateTitle() {
+    var d = new Date();
+    var date = d.getFullYear()
+      + "-" + String(d.getMonth() + 1).padStart(2, "0")
+      + "-" + String(d.getDate()).padStart(2, "0");
+    document.title = "CV_EL-AMMARI_Mouhssine-Yacine_" + date;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    try { var s = localStorage.getItem(LANG_KEY); if (s === "en" || s === "fr") lang = s; } catch (e) {}
+    updateTitle();
+    applyI18n();
+    loadExps();
+  });
+}());
+</script>
+</body>
+</html>
